@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Trash2, Calendar, Clock, X } from 'lucide-react';
@@ -15,7 +14,7 @@ const Cart = () => {
       teacher: 'Sarah Johnson',
       date: '2025-05-15',
       time: '10:00 AM - 12:00 PM EST',
-      price: 49.99
+      price: 499.99, // Updated price to match ClassDetails
     },
     {
       id: '2',
@@ -24,7 +23,7 @@ const Cart = () => {
       teacher: 'David Williams',
       date: '2025-05-18',
       time: '2:00 PM - 4:00 PM EST',
-      price: 39.99
+      price: 399.99, // Updated price
     }
   ]);
 
@@ -104,7 +103,7 @@ const Cart = () => {
                   </div>
                 </div>
                 <div className="md:w-1/4 flex flex-col items-end justify-between mt-4 md:mt-0">
-                  <div className="text-lg font-bold text-gray-800">${item.price.toFixed(2)}</div>
+                  <div className="text-lg font-bold text-gray-800">₹{item.price.toFixed(2)}</div>
                   <button 
                     onClick={() => handleRemoveItem(item.id)}
                     className="text-gray-500 hover:text-red-500 flex items-center mt-2"
@@ -121,31 +120,31 @@ const Cart = () => {
         <div className="lg:col-span-1">
           <div className="bg-white rounded-lg shadow-md p-6 sticky top-24">
             <h2 className="text-xl font-bold text-gray-800 mb-6">Order Summary</h2>
-            
+          
             <div className="space-y-4 mb-6">
               {cartItems.map((item) => (
                 <div key={item.id} className="flex justify-between items-center">
                   <div className="text-gray-600 truncate pr-2">{item.title}</div>
-                  <div className="text-gray-800 font-medium">${item.price.toFixed(2)}</div>
+                  <div className="text-gray-800 font-medium">₹{item.price.toFixed(2)}</div>
                 </div>
               ))}
             </div>
-            
+          
             <div className="border-t border-gray-200 pt-4 mb-6">
               <div className="flex justify-between items-center mb-2">
                 <div className="text-gray-600">Subtotal</div>
-                <div className="text-gray-800 font-medium">${calculateTotal()}</div>
+                <div className="text-gray-800 font-medium">₹{calculateTotal()}</div>
               </div>
               <div className="flex justify-between items-center mb-2">
                 <div className="text-gray-600">Tax</div>
-                <div className="text-gray-800 font-medium">$0.00</div>
+                <div className="text-gray-800 font-medium">₹0.00</div>
               </div>
               <div className="flex justify-between items-center text-lg font-bold">
                 <div>Total</div>
-                <div>${calculateTotal()}</div>
+                <div>₹{calculateTotal()}</div>
               </div>
             </div>
-            
+          
             <Button
               onClick={handleCheckout}
               className="w-full bg-brand-600 hover:bg-brand-700"

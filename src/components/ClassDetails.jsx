@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Calendar, Clock, DollarSign, User, Video, Users, Award, ChevronRight } from 'lucide-react';
@@ -24,7 +23,7 @@ const ClassDetails = () => {
     date: "2025-05-15",
     time: "10:00 AM - 12:00 PM EST",
     duration: "2 hours",
-    price: 49.99,
+    price: 499.99, // Changed price to a more typical Indian pricing
     studentsEnrolled: 24,
     maxStudents: 30,
     prerequisites: "Basic JavaScript knowledge, familiarity with React",
@@ -171,7 +170,7 @@ const ClassDetails = () => {
         <div className="lg:col-span-1">
           <div className="bg-white rounded-lg shadow-md p-6 sticky top-24">
             <div className="mb-6">
-              <div className="text-3xl font-bold text-gray-900 mb-4">${classData.price}</div>
+              <div className="text-3xl font-bold text-gray-900 mb-4">₹{classData.price}</div>
               
               <div className="space-y-3">
                 <div className="flex items-center">

@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, Clock, DollarSign, User } from 'lucide-react';
@@ -37,27 +36,20 @@ const ClassCard = ({ classItem }) => {
             className="w-full h-full object-cover"
           />
           <div className="absolute top-0 right-0 bg-brand-600 text-white text-sm font-semibold py-1 px-3 rounded-bl-lg">
-            ${classItem.price}
-          </div>
+          ₹{classItem.price}
         </div>
+        </div>
+        
         <div className="p-4">
           <h3 className="text-lg font-semibold text-gray-800 mb-2">{classItem.title}</h3>
           <div className="flex items-center text-sm text-gray-500 mb-1">
             <User className="h-4 w-4 mr-1 text-gray-400" />
             <span>{classItem.teacher}</span>
           </div>
-          <div className="flex items-center text-sm text-gray-500 mb-1">
-            <Calendar className="h-4 w-4 mr-1 text-gray-400" />
-            <span>{formatDate(classItem.date)}</span>
-          </div>
-          <div className="flex items-center text-sm text-gray-500 mb-3">
-            <Clock className="h-4 w-4 mr-1 text-gray-400" />
-            <span>{formatTime(classItem.time)}</span>
-          </div>
+          
           <div className="flex items-center justify-between">
             <div className="flex items-center text-brand-600 font-semibold">
-              <DollarSign className="h-4 w-4 mr-1" />
-              <span>${classItem.price}</span>
+              <span>₹{classItem.price}</span>
             </div>
             <Button 
               onClick={handleAddToCart} 

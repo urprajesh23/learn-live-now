@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Check, CreditCard, Calendar, Clock } from 'lucide-react';
@@ -18,7 +17,7 @@ const Checkout = () => {
       teacher: 'Sarah Johnson',
       date: '2025-05-15',
       time: '10:00 AM - 12:00 PM EST',
-      price: 49.99
+      price: 499.99, // Updated price to match other components
     },
     {
       id: '2',
@@ -26,7 +25,7 @@ const Checkout = () => {
       teacher: 'David Williams',
       date: '2025-05-18',
       time: '2:00 PM - 4:00 PM EST',
-      price: 39.99
+      price: 399.99, // Updated price
     }
   ];
 
@@ -119,13 +118,7 @@ const Checkout = () => {
                   />
                 </div>
                 
-                <Button 
-                  type="submit" 
-                  className="w-full bg-brand-600 hover:bg-brand-700"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? 'Processing...' : `Pay $${calculateTotal()}`}
-                </Button>
+                
               </div>
             </form>
           </div>
@@ -148,7 +141,7 @@ const Checkout = () => {
                     <Clock className="h-4 w-4 mr-1" />
                     <span>{item.time}</span>
                   </div>
-                  <div className="text-gray-800 font-medium mt-1">${item.price.toFixed(2)}</div>
+                  <div className="text-gray-800 font-medium">₹{item.price.toFixed(2)}</div>
                 </div>
               ))}
             </div>
@@ -156,28 +149,27 @@ const Checkout = () => {
             <div className="border-t border-gray-200 pt-4 mb-6">
               <div className="flex justify-between items-center mb-2">
                 <div className="text-gray-600">Subtotal</div>
-                <div className="text-gray-800 font-medium">${calculateTotal()}</div>
+                <div className="text-gray-800 font-medium">₹{calculateTotal()}</div>
               </div>
               <div className="flex justify-between items-center mb-2">
                 <div className="text-gray-600">Tax</div>
-                <div className="text-gray-800 font-medium">$0.00</div>
+                <div className="text-gray-800 font-medium">₹0.00</div>
               </div>
               <div className="flex justify-between items-center text-lg font-bold">
                 <div>Total</div>
-                <div>${calculateTotal()}</div>
+                <div>₹{calculateTotal()}</div>
               </div>
             </div>
             
-            <div className="text-sm text-gray-500">
-              <div className="flex items-start mb-2">
-                <Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" />
-                <span>You'll get instant access to your class after payment</span>
-              </div>
-              <div className="flex items-start">
-                <Check className="h-4 w-4 text-green-500 mr-2 mt-0.5" />
-                <span>Payment information is secured with 256-bit SSL encryption</span>
-              </div>
-            </div>
+            <Button
+              type="submit"
+              className="w-full bg-brand-600 hover:bg-brand-700"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Processing...' : `Pay ₹${calculateTotal()}`}
+            </Button>
+            
+            
           </div>
         </div>
       </div>
