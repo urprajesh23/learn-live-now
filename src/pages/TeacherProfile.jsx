@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Calendar as CalendarIcon, Clock, DollarSign, Upload, Plus, X } from 'lucide-react';
 import Navbar from '@/components/Navbar';

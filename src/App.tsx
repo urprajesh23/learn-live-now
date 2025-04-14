@@ -17,13 +17,11 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <React.StrictMode>
+const App = () => {
+  return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <TooltipProvider>
-          <Toaster />
-          <Sonner />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/classes" element={<Classes />} />
@@ -35,10 +33,12 @@ const App = () => (
             <Route path="/payment-success" element={<PaymentSuccess />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <Toaster />
+          <Sonner />
         </TooltipProvider>
       </BrowserRouter>
     </QueryClientProvider>
-  </React.StrictMode>
-);
+  );
+};
 
 export default App;

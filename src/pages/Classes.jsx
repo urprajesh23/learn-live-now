@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Search, Filter, X } from 'lucide-react';
 import Navbar from '@/components/Navbar';
@@ -192,7 +191,7 @@ const Classes = () => {
                       <SelectValue placeholder="All Categories" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="">All Categories</SelectItem>
+                      <SelectItem value="_all">All Categories</SelectItem>
                       {categories.map(category => (
                         <SelectItem key={category} value={category}>
                           {category}
@@ -211,7 +210,7 @@ const Classes = () => {
                       <SelectValue placeholder="All Levels" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="">All Levels</SelectItem>
+                      <SelectItem value="_all">All Levels</SelectItem>
                       {levels.map(level => (
                         <SelectItem key={level} value={level}>
                           {level}
@@ -271,7 +270,7 @@ const Classes = () => {
                         <SelectValue placeholder="All Categories" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">All Categories</SelectItem>
+                        <SelectItem value="_all">All Categories</SelectItem>
                         {categories.map(category => (
                           <SelectItem key={category} value={category}>
                             {category}
@@ -290,7 +289,7 @@ const Classes = () => {
                         <SelectValue placeholder="All Levels" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">All Levels</SelectItem>
+                        <SelectItem value="_all">All Levels</SelectItem>
                         {levels.map(level => (
                           <SelectItem key={level} value={level}>
                             {level}
