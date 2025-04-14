@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -14,6 +13,7 @@ import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import NotFound from "./pages/NotFound";
+import Teachers from "./pages/Teachers";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +32,7 @@ const App = () => {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/payment-success" element={<PaymentSuccess />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/teachers" element={<Teachers />} />
           </Routes>
           <Toaster />
           <Sonner />
