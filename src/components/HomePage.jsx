@@ -1,10 +1,10 @@
-
 import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import ClassCard from './ClassCard';
 import TeacherCard from './TeacherCard';
+import { formatIndianPrice, formatIndianDate, formatIndianTime } from '@/utils/localization';
 
 const HomePage = () => {
   // Sample data - in a real app, this would come from an API
@@ -15,8 +15,8 @@ const HomePage = () => {
       image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       teacher: 'Sarah Johnson',
       date: '2025-05-15',
-      time: '10:00 AM - 12:00 PM EST',
-      price: 49.99
+      time: '10:00',
+      price: 4999
     },
     {
       id: '2',
@@ -24,8 +24,8 @@ const HomePage = () => {
       image: 'https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       teacher: 'David Williams',
       date: '2025-05-18',
-      time: '2:00 PM - 4:00 PM EST',
-      price: 39.99
+      time: '14:00',
+      price: 3999
     },
     {
       id: '3',
@@ -33,8 +33,8 @@ const HomePage = () => {
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       teacher: 'Michael Chen',
       date: '2025-05-20',
-      time: '6:00 PM - 8:00 PM EST',
-      price: 44.99
+      time: '18:00',
+      price: 4499
     },
   ];
 

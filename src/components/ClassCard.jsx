@@ -1,8 +1,10 @@
+
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, Clock, DollarSign, User } from 'lucide-react';
+import { Calendar, Clock, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
+import { formatIndianPrice, formatIndianDate } from '@/utils/localization';
 
 const ClassCard = ({ classItem }) => {
   const [isAddingToCart, setIsAddingToCart] = useState(false);
@@ -16,16 +18,6 @@ const ClassCard = ({ classItem }) => {
     }, 500);
   };
 
-  // Format date and time
-  const formatDate = (dateString) => {
-    const options = { weekday: 'short', month: 'short', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString('en-US', options);
-  };
-
-  const formatTime = (timeString) => {
-    return timeString;
-  };
-
   return (
     <Link to={`/class/${classItem.id}`} className="block">
       <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
@@ -36,8 +28,8 @@ const ClassCard = ({ classItem }) => {
             className="w-full h-full object-cover"
           />
           <div className="absolute top-0 right-0 bg-brand-600 text-white text-sm font-semibold py-1 px-3 rounded-bl-lg">
-          ₹{classItem.price}
-        </div>
+            {formatIndianPrice(classItem.price)}
+          </div>
         </div>
         
         <div className="p-4">
@@ -49,7 +41,7 @@ const ClassCard = ({ classItem }) => {
           
           <div className="flex items-center justify-between">
             <div className="flex items-center text-brand-600 font-semibold">
-              <span>₹{classItem.price}</span>
+              <span>{formatIndianPrice(classItem.price)}</span>
             </div>
             <Button 
               onClick={handleAddToCart} 
