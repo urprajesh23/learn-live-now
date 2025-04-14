@@ -1,4 +1,3 @@
-
 import HomePage from '@/components/HomePage';
 import Navbar from '@/components/Navbar';
 
@@ -13,7 +12,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-lg font-semibold mb-4">LearnLiveNow</h3>
+              <h3 className="text-lg font-semibold mb-4">Thunai</h3>
               <p className="text-gray-400">The best platform for live online learning. Connect with expert instructors in real-time.</p>
             </div>
             <div>
@@ -56,7 +55,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} LearnLiveNow. All rights reserved.
+            &copy; {new Date().getFullYear()} Thunai. All rights reserved.
           </div>
         </div>
       </footer>
