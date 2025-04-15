@@ -1,6 +1,6 @@
 
 // Format currency in Indian Rupees
-export const formatIndianPrice = (amount: number) => {
+export const formatIndianPrice = (amount) => {
   return new Intl.NumberFormat('en-IN', {
     style: 'currency',
     currency: 'INR',
@@ -10,7 +10,7 @@ export const formatIndianPrice = (amount: number) => {
 };
 
 // Format date in Indian format
-export const formatIndianDate = (date: string | Date) => {
+export const formatIndianDate = (date) => {
   return new Intl.DateTimeFormat('en-IN', {
     weekday: 'long',
     year: 'numeric',
@@ -20,7 +20,7 @@ export const formatIndianDate = (date: string | Date) => {
 };
 
 // Format time in 12-hour format with IST
-export const formatIndianTime = (timeString: string) => {
+export const formatIndianTime = (timeString) => {
   const [hours, minutes] = timeString.split(':');
   const date = new Date();
   date.setHours(parseInt(hours), parseInt(minutes));
