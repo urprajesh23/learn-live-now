@@ -38,7 +38,7 @@ const Navbar = () => {
           </Link>
           <Link to="/teacher-profile">
             <Button variant="default" className="bg-brand-600 hover:bg-brand-700">
-              Teach on LearnLiveNow
+              Be a Teacher
             </Button>
           </Link>
         </div>
@@ -70,7 +70,7 @@ const Navbar = () => {
             <Link to="/account" className="text-gray-700 hover:text-brand-600 transition-colors py-2">My Account</Link>
             <Link to="/teacher-profile">
               <Button variant="default" className="w-full bg-brand-600 hover:bg-brand-700">
-                Teach on LearnLiveNow
+                Be a Teacher
               </Button>
             </Link>
           </div>
