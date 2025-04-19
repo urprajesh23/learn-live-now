@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Check, CreditCard, Calendar, Clock } from 'lucide-react';
@@ -42,11 +43,16 @@ const Checkout = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate payment processing
+    // Store cart items in localStorage to make them available in the dashboard
+    const existingCourses = JSON.parse(localStorage.getItem('enrolledCourses') || '[]');
+    const newCourses = [...existingCourses, ...cartItems];
+    localStorage.setItem('enrolledCourses', JSON.stringify(newCourses));
+    
+    // Show success message and redirect
     setTimeout(() => {
       setIsSubmitting(false);
-      toast.success('Payment successful! Your classes are booked.');
-      navigate('/payment-success');
+      toast.success('Successfully enrolled in courses!');
+      navigate('/student-dashboard');
     }, 1500);
   };
 
